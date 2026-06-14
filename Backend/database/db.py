@@ -17,6 +17,14 @@ def init_db(app):
     }
     db_name = os.getenv("DB_NAME", "ai_code_flowchart")
 
+    #temporary debug prints for env vars
+    print("DB_HOST =", os.getenv("DB_HOST"))
+    print("DB_PORT =", os.getenv("DB_PORT"))
+    print("DB_USER =", os.getenv("DB_USER"))
+    print("DB_NAME =", os.getenv("DB_NAME"))
+    # 
+    
+
     # Ensure database exists
     tmp = mysql.connector.connect(**cfg)
     cur = tmp.cursor()
