@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% from "_sidebar.html" import sidebar %}
+{% block title %}Dashboard{% endblock %}
+{% block body %}
+<div class="app-shell">
+  {{ sidebar('dashboard') }}
+  <main class="content">
+    <h2 class="mb-4">Welcome, <span id="userName">…</span></h2>
+    <div class="row g-3 mb-4">
+      <div class="col-md-3"><div class="card stat"><div class="card-body"><div class="text-muted">Total sessions</div><h3 id="statTotal">–</h3></div></div></div>
+      <div class="col-md-3"><div class="card stat"><div class="card-body"><div class="text-muted">Flowcharts</div><h3 id="statFlow">–</h3></div></div></div>
+      <div class="col-md-3"><div class="card stat"><div class="card-body"><div class="text-muted">Classifications</div><h3 id="statClass">–</h3></div></div></div>
+      <div class="col-md-3"><div class="card stat"><div class="card-body"><div class="text-muted">Explanations</div><h3 id="statExp">–</h3></div></div></div>
+    </div>
+    <div class="card"><div class="card-body">
+      <h5>Recent sessions</h5>
+      <div class="table-responsive"><table class="table align-middle">
+        <thead><tr><th>When</th><th>Type</th><th>Language</th><th>Logic</th><th>Confidence</th></tr></thead>
+        <tbody id="recentRows"></tbody>
+      </table></div>
+    </div></div>
+  </main>
+</div>
+{% endblock %}
+{% block scripts %}<script>App.requireAuth(); App.initDashboard();</script>{% endblock %}

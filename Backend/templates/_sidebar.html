@@ -1,0 +1,16 @@
+{% macro sidebar(active='') %}
+<aside class="sidebar">
+  <div class="brand"><i class="bi bi-diagram-3"></i> AI Learn</div>
+  <nav>
+    <a href="/dashboard" class="{{ 'active' if active=='dashboard' }}"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <a href="/editor" class="{{ 'active' if active=='editor' }}"><i class="bi bi-code-slash"></i> Code Editor</a>
+    <a href="/flowchart-to-code" class="{{ 'active' if active=='f2c' }}"><i class="bi bi-arrow-left-right"></i> Flowchart → Code</a>
+    <a href="/history" class="{{ 'active' if active=='history' }}"><i class="bi bi-clock-history"></i> History</a>
+    <a href="/profile" class="{{ 'active' if active=='profile' }}"><i class="bi bi-person-circle"></i> Profile</a>
+  </nav>
+  <div class="sidebar-foot">
+    <button class="btn btn-sm btn-outline-secondary w-100 mb-2" id="themeBtn"><i class="bi bi-moon-stars"></i> Theme</button>
+    <button class="btn btn-sm btn-outline-danger w-100" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</button>
+  </div>
+</aside>
+{% endmacro %}

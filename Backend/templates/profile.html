@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% from "_sidebar.html" import sidebar %}
+{% block title %}Profile{% endblock %}
+{% block body %}
+<div class="app-shell">
+  {{ sidebar('profile') }}
+  <main class="content">
+    <h3>Profile</h3>
+    <div class="card" style="max-width:520px"><div class="card-body">
+      <p><strong>Username:</strong> <span id="pUser">—</span></p>
+      <p><strong>Email:</strong> <span id="pEmail">—</span></p>
+      <p><strong>Member since:</strong> <span id="pCreated">—</span></p>
+    </div></div>
+  </main>
+</div>
+{% endblock %}
+{% block scripts %}<script>App.requireAuth(); App.initProfile();</script>{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% from "_sidebar.html" import sidebar %}
+{% block title %}History{% endblock %}
+{% block body %}
+<div class="app-shell">
+  {{ sidebar('history') }}
+  <main class="content">
+    <h3>Learning history</h3>
+    <div id="historyList" class="row g-3"></div>
+  </main>
+</div>
+{% endblock %}
+{% block scripts %}<script>App.requireAuth(); App.initHistory();</script>{% endblock %}
